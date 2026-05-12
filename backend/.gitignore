@@ -1,0 +1,5 @@
+# Local environment overrides — do NOT commit this file
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
