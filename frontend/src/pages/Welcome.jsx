@@ -4,6 +4,33 @@ import { getProtectedData } from '../api/auth'
 import { getToken, clearTokens } from '../utils/auth'
 import styles from './Welcome.module.css'
 
+const microsoftCertifications2026 = [
+  {
+    name: 'Microsoft Certified: Azure Data Scientist Associate',
+    retirementDate: '1 de junio de 2026',
+    category: 'Azure',
+    url: 'https://learn.microsoft.com/en-us/credentials/certifications/azure-data-scientist/',
+  },
+  {
+    name: 'Microsoft Certified: Azure AI Engineer Associate',
+    retirementDate: '30 de junio de 2026',
+    category: 'Azure AI',
+    url: 'https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/',
+  },
+  {
+    name: 'Microsoft Certified: Azure Developer Associate',
+    retirementDate: '31 de julio de 2026',
+    category: 'Desarrollo',
+    url: 'https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/',
+  },
+  {
+    name: 'Microsoft Certified: Azure Security Engineer Associate',
+    retirementDate: '31 de agosto de 2026',
+    category: 'Seguridad',
+    url: 'https://learn.microsoft.com/en-us/credentials/certifications/azure-security-engineer/',
+  },
+]
+
 export default function Welcome() {
   const navigate = useNavigate()
   const [message, setMessage] = useState('')
@@ -153,6 +180,39 @@ export default function Welcome() {
                 <p className={styles.apiResponse}>{message}</p>
               </div>
             </div>
+
+            <section className={styles.certSection} aria-labelledby="certificaciones-2026-title">
+              <div className={styles.shell}>
+                <div className={styles.card}>
+                  <h2 id="certificaciones-2026-title" className={styles.certTitle}>
+                    Certificaciones Microsoft 2026
+                  </h2>
+                  <p className={styles.certSub}>
+                    Basado en Microsoft Learn (Credential retirement): certificaciones con retiro programado durante 2026.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.certGrid}>
+                {microsoftCertifications2026.map(certification => (
+                  <div key={certification.name} className={styles.metaShell}>
+                    <article className={styles.certCard}>
+                      <p className={styles.certCategory}>{certification.category}</p>
+                      <h3 className={styles.certName}>{certification.name}</h3>
+                      <p className={styles.certDate}>Retiro: {certification.retirementDate}</p>
+                      <a
+                        className={styles.certLink}
+                        href={certification.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Ver en Microsoft Learn
+                      </a>
+                    </article>
+                  </div>
+                ))}
+              </div>
+            </section>
           </>
         )}
       </main>
