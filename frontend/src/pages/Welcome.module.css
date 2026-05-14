@@ -239,6 +239,66 @@
   font-style: italic;
 }
 
+/* ─── Microsoft certifications 2026 ─── */
+.certSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+.certTitle {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-gap);
+}
+.certSub {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+}
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-xl);
+}
+.certCard {
+  background: rgba(248, 249, 250, 0.9);
+  backdrop-filter: blur(var(--blur-surface));
+  -webkit-backdrop-filter: blur(var(--blur-surface));
+  border-radius: calc(var(--radius-lg) - 1px);
+  padding: var(--spacing-card);
+  border: 0.8px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-height: 220px;
+}
+.certCategory {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-text-secondary);
+}
+.certName {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+.certDate {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+}
+.certLink {
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.certLink:hover {
+  text-decoration: underline;
+}
+
 /* ─── Error ─── */
 .errorMsg {
   font-size: 14px;
